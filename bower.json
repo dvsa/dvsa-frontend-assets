@@ -6,12 +6,14 @@
     "Steven Adams <steven@stevenada.ms> (http://www.stevenada.ms)"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://github.com/dvsa/dvsa-frontend-assets#readme",
   "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "src",
+    "scss-lint.yml"
   ]
 }
