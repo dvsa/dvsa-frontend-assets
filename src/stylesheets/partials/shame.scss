@@ -1,0 +1,185 @@
+// Used on the buy slots page to reset the spacing in Chrome
+.slot-hero + fieldset legend {
+    float: left;
+}
+
+// Validation summary styling is a nested include within elements - needs to unpicked/or renamed
+
+.validation-summary {
+
+    background-color: $error-background;
+
+    ul,
+    ol {
+        margin-top: $gutter;
+        margin-bottom: $gutter;
+        color: $error-colour;
+    }
+
+    li,
+    p {
+        @include core-19;
+        margin-bottom: 5px;
+    }
+
+    .heading-medium {
+        margin-top: $gutter-half;
+        margin-bottom: 0;
+    }
+}
+
+.heading-medium + .key-value-list {
+    margin-top: 0;
+}
+
+// Key/value action table links
+.key-value-list__action--fr {
+    float: right;
+    font-weight: normal;
+}
+
+// demo risk score header
+.content-header__ur {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.content-header__ur-action {
+    // position:absolute;
+    top: 18px;
+    right: 0;
+    // display:block;
+    font-size: 16px;
+    text-align: right;
+}
+
+// Colour for RAG Risk assessment scores - only in here as I'm not sure where else to put it
+span[class^=label-value] {
+    position: relative;
+    display: inline-block;
+    border-radius: 4px;
+    padding: 3px 8px 0;
+    line-height: 17px;
+    border: 1px solid #fff;
+}
+
+span[class^=label-value--] {
+    color: #fff;
+
+}
+
+span.label-value--white {
+    background-color: #fff;
+    border: 1px solid #333;
+    color: inherit;
+}
+
+span.label-value--red {
+    background-color: $red;
+}
+
+span.label-value--amber {
+    background-color: $yellow;
+    color: inherit;
+}
+
+span.label-value--green {
+    background-color: $green;
+}
+
+// BL-1708 40 character values
+.table-summary--smaller-key {
+    table-layout: fixed;
+
+    tbody > tr > th:first-child,
+    tbody > tr > td:first-child {
+        width: 25%;
+    }
+}
+
+//  ---------------------------------------
+// Legacy: Remove once TQI BL1933 is live
+//  ---------------------------------------
+.tqi-data {
+
+    background-color: $light-blue;
+
+    td {
+        color: $white;
+        padding-top: 0;
+        padding-bottom: 30px;
+        border: 0;
+    }
+
+    td:first-child {
+
+        padding-right: 1.05263em;
+        padding-left: 15px;
+    }
+
+    .bold-large span {
+
+        &.label {
+            @include bold-19;
+
+            display: block;
+        }
+
+        &.meta {
+
+            @include core-19;
+
+            color: $white;
+        }
+    }
+}
+
+.result-table {
+
+    margin-bottom: $gutter;
+
+    &__first-row {
+        background-color: $grey-3;
+    }
+
+    &__last-row {
+        // not empty but exists if required
+    }
+
+    &__first-cell {
+        padding-left: 5px;
+    }
+
+    table td &__last-cell {
+        padding-right: 5px;
+    }
+
+    // required to override a default
+    td:last-child {
+        padding-right: 5px;
+    }
+}
+//  ---------------------------------------
+// END Legacy: Remove once TQI BL1933 is live
+//  ---------------------------------------
+
+// some hideous selectors
+// I can't use a special class in the natural css hierarchy as it's so specific, and governed by other rules that I need to use !important which we're not allowed to do.
+// there was a table-reference__no-data class...
+// Pick your lesser evil.
+.table-reference--isempty .table-reference__row--primary .numeric,
+.table-reference--isempty .table-reference__row--primary .font-xsmall {
+    line-height: 16px!important;
+    vertical-align: bottom;
+    padding-bottom: 18px;
+}
+
+// the following fixes the missing arrow in FireFox on the details/summary toggle box
+
+@-moz-document url-prefix() {
+    details summary {
+        display: list-item;
+        display: revert;
+    }
+}

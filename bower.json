@@ -1,0 +1,17 @@
+{
+  "name": "dvsa-frontend-assets",
+  "description": "DVSA front-end assets",
+  "main": "gruntfile.js",
+  "authors": [
+    "Steven Adams <steven@stevenada.ms> (http://www.stevenada.ms)"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

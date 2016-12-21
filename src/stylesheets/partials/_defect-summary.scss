@@ -1,0 +1,319 @@
+.defect-summary {
+    @extend %contain-floats;
+    @include core-16;
+
+    background-color: #e7e7e7;
+    border: 1px solid $grey-2;
+    margin-bottom: $gutter-half;
+
+    // Optional totals for browse, search and list views
+    &__total {
+        position: relative;
+        padding: $gutter-half;
+
+        @include media(tablet) {
+            padding: 15px 130px;
+        }
+
+        &-heading {
+            display: none;
+            font-weight: 700;
+
+            @include media(tablet) {
+                display: inline-block;
+                position: absolute;
+                top: 15px;
+                left: 15px;
+            }
+        }
+
+        ul {
+            li {
+                display: inline-block;
+                margin-right: 10px;
+
+                @include media(tablet) {
+                    width: 32%;
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    &__heading,
+    &__heading--small {
+        @include bold-24;
+        border-top: 1px solid $grey-2;
+        padding: 12px 15px;
+        background-color: #f1f1f1;
+
+        &-type {
+            padding-left: 10px;
+        }
+
+        .badge--warn,
+        .badge--info,
+        .badge--alert {
+            margin: 0;
+        }
+    }
+
+    &__heading--small {
+        @include bold-19;
+    }
+
+    &__toggle {
+        font-weight: 700;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        display: none;
+
+        .js-enabled & {
+            display: block;
+        }
+
+        .lte-ie8 & {
+            display: none;
+        }
+    }
+
+    &__footer {
+        text-align: center;
+
+        .js-enabled & {
+            border-top: 1px solid $grey-2;
+            padding: 10px 15px;
+        }
+
+        a {
+            font-weight: 700;
+            display: none;
+
+            .js-enabled & {
+                display: inline-block;
+            }
+
+            .lte-ie8 & {
+                display: none;
+            }
+        }
+    }
+
+    //Context stuff
+
+    .action-panel + & {
+        border-top: 0;
+        margin-top: -1px;
+        margin-bottom: 30px;
+    }
+}
+
+// PROG ENHANCEMENT STUFF
+.js-enabled {
+
+    .rfr-toggle-list {
+        display: none;
+    }
+}
+
+//  ============
+//  NEW BLOCK
+//  .defect
+//  ============
+.defect {
+    @include core-16;
+    position: relative;
+    border-top: 1px solid $grey-2;
+    padding: 15px;
+    background-color: $white;
+    transition: background-color .4s ease-in-out;
+
+    &__is-dangerous {
+        color: $mellow-red;
+        font-weight: 700;
+        display: block;
+    }
+
+    &__mark-repaired {
+        margin-bottom: 6px;
+    }
+
+    &.has-success {
+        background-color: mix($white, $green, 85%);
+
+        .defect__mark-repaired { display: none; }
+        .defect__marked-undo { display: block; }
+
+    }
+
+    &__title {
+        display: block;
+
+        @include media(tablet) {
+            margin-right: 220px;
+        }
+    }
+
+    &__meta {
+        display: block;
+        padding-top: 5px;
+        margin: 0;
+
+        @include media(tablet) {
+            margin-right: 220px;
+        }
+    }
+
+    &__reference {
+        display: block;
+        padding-top: 5px;
+        margin: 0;
+        color: $secondary-text-colour;
+
+        a {
+            &[rel="external"]:after {
+                background-position: right 3px;
+            }
+        }
+    }
+
+    &__marked-defect {
+        background-color: $grey-1;
+    }
+
+    &__marked-undo {
+        display: none;
+
+        span {
+            @include bold-16;
+
+            display: block;
+            color: $green;
+
+            &:before {
+                background-position: 0 0;
+                background-repeat: no-repeat;
+                background-image: url('../images/icons/icon-tick.png');
+                width: 27px;
+                height: 27px;
+                display: inline-block;
+                position: relative;
+                content: '';
+                vertical-align: middle;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    // Actions for editing or removing defects (summary view}
+    &__edit {
+        padding: 5px 0 0;
+
+        @include media(tablet) {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            padding-bottom: 5px;
+            text-align: right;
+        }
+
+        // li {
+        //     display: inline;
+        //
+        //     @include media(tablet) {
+        //         display: block;
+        //     }
+        // }
+
+        li:first-child {
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+    }
+
+    &__change-error {
+        @include core-14();
+
+        display: none;
+        // display: block;
+        position: relative;
+        line-height: 12px;
+        text-align: right;
+        color: $red;
+        // top: -10px;
+    }
+
+    // Actions for adding defects (list view)
+    &__add {
+        margin-top: 10px;
+
+        @include media(tablet) {
+            position: absolute;
+            right: 0;
+            margin-top: 0;
+            top: 15px;
+        }
+
+        li {
+            display: inline;
+        }
+
+        li + li {
+            margin-left: 10px;
+        }
+    }
+
+    // Positional values of added defect
+    &__positions {
+        @extend %contain-floats;
+        color: $secondary-text-colour;
+        padding-top: 5px;
+
+        li {
+            @include media(tablet) {
+                display: inline-block;
+                width: 30%;
+            }
+
+            @include media(false, 740px) {
+                display: block;
+                width: 100%;
+            }
+
+            @include media(false, 640px) {
+                display: inline-block;
+                width: 30%;
+            }
+        }
+
+        &-value {
+
+            @include media(desktop) {
+                display: inline;
+            }
+
+            @include media(false, 900px) {
+                display: block;
+            }
+
+            @include media(false, 740px) {
+                display: inline;
+            }
+
+            @include media(false, 445px) {
+                display: block;
+            }
+        }
+    }
+
+    // CONTEXT STUFF
+    .defect-results & {
+        padding-left: 0;
+
+        &:last-child {
+            border-bottom: 1px solid $grey-2;
+        }
+    }
+
+}

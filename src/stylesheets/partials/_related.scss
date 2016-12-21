@@ -1,0 +1,42 @@
+.related,
+.related--no-bar {
+    border-top: 10px solid $mot-blue;
+    margin-top: 1.6em;
+}
+
+.related--no-bar {
+    border-top-color: $white;
+}
+  
+.related__section {
+    padding-right: 1em;
+}
+    
+.related__section-title {
+    @include bold-24();
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+    
+.related__section-links {
+    @include core-16;
+    margin-bottom: 3em;
+
+    > li {
+        margin-bottom: .75em;
+    }
+}
+
+.related__status {
+    @include core-16;
+    margin-bottom: 3em;
+
+    > li {
+        border-bottom: 1px solid #bfc1c3;
+        border-left: 1px solid #bfc1c3;
+        border-right: 1px solid #bfc1c3;
+        
+        padding: .75em .75em .5625em;
+    }
+}
+

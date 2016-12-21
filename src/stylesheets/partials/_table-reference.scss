@@ -1,0 +1,67 @@
+%table-reference-base {
+    margin-top: 15px;
+
+    td, 
+    th,
+    td.numeric,
+    th.numeric {
+        padding-right: 0;
+        padding-left: 15px;
+        font-size: 16px;
+
+        &:last-child {
+            padding-right: 15px;
+        }
+    }
+}
+
+.table-reference {
+    @extend %table-reference-base;
+
+    &__head th,
+    &__head td {
+        // colour & size
+        background-color: $light-blue;
+        color: $white;
+        padding-bottom: 0;
+    }
+
+    &__meta {
+        // block weight font
+        display: block;
+        font-weight: 400;
+    }
+
+    &__row--primary td,
+    &__row--primary td.numeric {
+        //size weight bgnd
+        font-size: 24px;
+        font-weight: 700;
+        color: $white;
+        background-color: $light-blue;
+        border: 0;
+        padding-top: 5px;
+    }
+    
+    // NOT A TYPO only applies to std. block NOT modifiws
+    & &__row--primary + tr td {
+        border-top: 0;
+    }
+
+    &__row--secondary {
+        background-color: #d5e8f3;
+    }
+}
+
+.table-reference--isempty {
+    @extend %table-reference-base;
+
+    .table-reference__head th,
+    .table-reference__head td,
+    .table-reference__row--primary td,
+    .table-reference__row--primary td.numeric {
+        background-color: $grey-3;
+        color: $text-colour;
+    }
+
+}

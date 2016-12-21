@@ -1,0 +1,118 @@
+// Based on GOV.UK brand blue but slightly lighter so it hits contrast on the
+// black header bar when used as copy colour.
+$proposition-active-nav: #1d8feb;
+
+// ==========================================================================
+// 1. Override logo sizes
+// ==========================================================================
+
+#global-header #logo {
+    // height: 53px;
+
+    img {
+        // height: 53px;
+        // width: 56px;
+        // padding-right: 0;
+    }
+}
+
+// ==========================================================================
+// 2. Override colour flash
+// ==========================================================================
+
+#global-header-bar .header-bar {
+    background-color: $mot-blue;
+}
+
+
+// ==========================================================================
+// User specific styling
+// ==========================================================================
+
+.header-user__name {
+    @include bold-24;
+    color: $white;
+}
+
+.header-user__id {
+
+    @include core-19;
+    color: $white;
+
+    &:before {
+        content: ' - ';
+        color: $white;
+    }
+}
+
+.header-user__address {
+    @include core-19;
+    color: $white;
+    display: block;
+    text-decoration: none;
+
+    a,
+    a:link,
+    a:visited {
+        @include bold-14;
+        color: $white;
+        text-decoration: none;
+        margin-left: 30px;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+// ==========================================================================
+// Nav styling - from govuk_template/source/assets/stylesheets/_header.scss
+// ==========================================================================
+
+// Basic styling built from the #proposition-links element
+
+.header-user__menu {
+    @extend %contain-floats;
+    clear: both;
+    margin: 2px 0 0;
+    padding: 0;
+
+    li {
+        float: left;
+        padding: 3px 15px 3px 0;
+
+        @include media(desktop) {
+            display: block;
+            width: auto;
+            padding: 0 15px 0 0;
+        }
+    }
+
+    a {
+        @include bold-14;
+
+        color: $white;
+        text-decoration: none;
+
+        @include media(desktop) {
+            @include bold-16;
+            line-height: 23px;
+        }
+
+        &:visited {
+            color: $white;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &.active {
+            color: $proposition-active-nav;
+        }
+
+        &:focus {
+            color: $black;
+        }
+    }
+}

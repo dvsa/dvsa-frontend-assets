@@ -1,0 +1,54 @@
+// Negates the need for the ".form-group-compound" modifier
+.form-group + .panel-indent {
+    @include box-sizing(border-box);
+    float: left;
+    width: 100%;
+    margin: -20px 0 30px;
+    padding: 10px 15px;
+}
+
+select.form-control,
+.form-control-select {
+    @include core-19;
+    @include box-sizing(border-box);
+    border: 1px solid #bfc1c3;
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist; 
+}
+
+.form-control-select {
+    width: 100%;
+
+    @include media(tablet) {
+        width: 50%;
+    }
+
+    &.form-control-3-4 {
+
+        @include media(tablet) {
+            width: 75%;
+        }
+    }
+
+    &.form-control-1-2 {
+
+        @include media(tablet) {
+            width: 50%;
+        }
+    }
+
+    &.form-control-1-4 {
+
+        @include media(tablet) {
+            width: 25%;
+        }
+    }
+
+    &.form-control-1-8 {
+
+        @include media(tablet) {
+            width: 12.5%;
+        }
+    }
+}
+

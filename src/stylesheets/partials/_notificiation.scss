@@ -1,0 +1,38 @@
+.notification {
+    padding: $gutter-half 0;
+}
+
+// Modifier --nomination
+.notification--nomination {
+    background-color: $grey-4;
+    padding: $gutter-half;
+}
+
+.notification__subject,
+.notification__subject--is-unread {
+    margin: 0;
+}
+
+// Modifier --is-unread
+.notification__subject--is-unread {
+    font-weight: 700;
+}
+
+.notification__link {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 100%;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.notification__time {
+    @include core-16;
+    color: $secondary-text-colour;
+    display: block;
+    clear: both;
+}

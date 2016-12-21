@@ -1,0 +1,16 @@
+.entity-status {
+    color: #fff;
+    padding: 30px;
+    background-color: $govuk-blue;
+}
+
+.entity-status__title {
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+.entity-status .button {
+    background: $white;
+    color: $govuk-blue;
+    font-weight: bold;
+}

@@ -1,0 +1,205 @@
+
+@import "config/colours";
+@import "config/measurements";
+@import "config/font_stack";
+
+@import "tools/conditionals";
+@import "tools/typography";
+@import "tools/device-pixels";
+@import "tools/url-helpers";
+@import "tools/includes/shims";
+@import "tools/includes/css3";
+
+// ==========================================================================
+// Import elements 'main.scss' file
+// *Comment* out as overwritten
+// ==========================================================================
+// Helpers
+@import "elements/helpers";
+@import "elements/reset";
+@import "elements/elements-typography";
+//@import "elements/layout";
+@import "partials/layout";
+// Modules
+@import "elements/forms";
+// @import "elements/tables";
+@import "elements/buttons";
+@import "elements/details";
+@import "elements/lists";
+@import "elements/panels";
+@import "elements/icons";
+// ==========================================================================
+// End elements 'main.scss' file
+// ==========================================================================
+@import "partials/icons";
+@import "partials/typography";
+@import "partials/mot-global-header.scss";
+@import "partials/hero";
+@import "partials/tables";
+@import "partials/table-summary";
+@import "partials/summary-heading";
+@import "partials/buttons";
+@import "partials/banner";
+@import "partials/content-header";
+
+@import "partials/transaction-header";
+@import "components/c-transaction-details";
+
+@import "partials/entity-header";
+@import "partials/footer";
+@import "partials/present-data";
+@import "partials/data-list";
+@import "partials/pivot-panel";
+@import "partials/big-data";
+@import "partials/mailbox-status";
+@import "partials/slot-hero";
+@import "partials/notificiation";
+@import "partials/content-navigation";
+@import "partials/form";
+@import "partials/form-time";
+@import "partials/form-pin";
+@import "partials/two-fa";
+@import "partials/form-textarea";
+@import "partials/messages";
+@import "partials/typeahead";
+@import "partials/criteria";
+@import "partials/search-group.scss";
+@import "partials/layout-filter-data";
+@import "partials/filter";
+@import "partials/data-paging";
+@import "partials/sign-in";
+@import "partials/data-tables";
+@import "partials/table-default";
+@import "partials/table-matched-records";
+@import "partials/table-reference";
+@import "partials/pagination";
+@import "partials/search-bar";
+@import "partials/breadcrumbs";
+@import "partials/rfr-browser";
+@import "partials/car-details";
+
+@import "partials/utilities";
+@import "partials/defect-summary";
+@import "partials/defect-status";
+@import "partials/action-panel";
+@import "partials/badge";
+@import "partials/related";
+@import "partials/organisation-logo";
+@import "partials/dvsa-overrides";
+@import "partials/entity-status";
+@import "partials/layer-table";
+
+@import "partials/u-hidden";
+
+// We are shamed, and will seek to repent (refactor asap)
+@import "partials/shame";
+
+// ==========================================================================
+// GOV.UK template styles
+// ==========================================================================
+// Override here until updated in the GOV.UK template
+
+#global-header-bar {
+  @extend %site-width-container;
+}
+#global-header-bar .inner-block {
+  padding: 0;
+}
+
+// ==========================================================================
+// Service Design Manual styles
+// ==========================================================================
+
+@import "partials/page-header";
+
+// Example boxes
+// ==========================================================================
+
+.example {
+  @extend %contain-floats;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $grey-2;
+  margin-top: $gutter-half;
+  margin-bottom: $gutter*1.5;
+
+  padding-top: $gutter;
+  padding-right: $gutter-half;
+  padding-bottom: $gutter-half;
+  padding-left: $gutter-half;
+
+  @include media(tablet) {
+    padding-top: $gutter*1.5;
+    padding-right: $gutter;
+    padding-bottom: $gutter;
+    padding-left: $gutter;
+  }
+
+  .text + &,
+  ul + &,
+  ol + &,
+  p + & {
+    margin-top: $gutter;
+  }
+
+  &:before {
+    content: "EXAMPLE";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    padding: em(4) em(15) em(4) em(15);
+
+    @include core-14;
+    background: $grey-2;
+    color: white;
+  }
+
+  // Blue text for heading sizes
+  .highlight {
+    font-style: normal;
+    color: $hm-government;
+  }
+
+  // Fix grid layout within example boxes for IE7 and below
+  // where box-sizing isn't supported: http://caniuse.com/#search=box-sizing
+  @mixin example-box-column($width) {
+    width: (($site-width - $gutter) * $width) - $gutter;
+  }
+
+  @include ie-lte(7){
+
+    // Set example box width to 900px (removing left and right padding)
+    $example-box-width: $site-width - ($gutter * 2);
+    width: $example-box-width;
+
+    // Recalculate grid column widths
+    .column-quarter {
+      @include example-box-column( 1/4 );
+    }
+    .column-half {
+      @include example-box-column( 1/2 );
+    }
+    .column-third {
+      @include example-box-column( 1/3 );
+    }
+    .column-two-thirds {
+      @include example-box-column( 2/3 );
+    }
+
+    // Scale images to fit grid columns
+    img {
+      width: 100%;
+    }
+  }
+
+}
+
+
+// 2. Typography
+// ==========================================================================
+// Added by TC to negate the reset located in elements
+strong {
+    font-weight: 700;
+}

@@ -1,0 +1,69 @@
+.message,
+.message--failure,
+.message--success,
+.message--information,
+.message--important {
+    
+    @include box-sizing(border-box);
+
+    border-left: 4px solid $grey-2;
+    background-color: $grey-4;
+    margin: $gutter 0;
+
+    >ol > li,
+    >ul > li,
+    > p {
+        max-width: 30em; // Like the .text class
+    }
+
+    ul:last-child,
+    ol:last-child,
+    p:last-child {
+        margin-bottom: 0;
+    }
+
+    ul:first-child,
+    ol:first-child,
+    p:first-child {
+        margin-top: 0;
+    }
+
+}
+
+// SUPPORTED >= IE7 http://css-tricks.com/attribute-selectors/
+[class*='message'] + [class*='message'] {
+    margin-top: -$gutter + 5px;
+}
+
+.message {
+    padding: $gutter-half $gutter-half $gutter-half $gutter;
+}
+
+.message--failure,
+.message--success,
+.message--information,
+.message--important {
+    padding: $gutter-half $gutter-half $gutter-half 60px;
+}
+
+
+.message__heading {
+    @include bold-24;
+    max-width: 30em; // Like the .text class
+}
+
+.message--success:before {
+    @include iconhelper('tick');
+}
+
+.message--failure:before {
+    @include iconhelper('cross');
+}
+
+.message--information:before {
+    @include iconhelper('information');
+}
+
+.message--important:before {
+    @include iconhelper('mot-important');
+}

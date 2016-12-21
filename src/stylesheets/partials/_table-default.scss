@@ -1,0 +1,31 @@
+.table-default {
+
+    &__head {
+        @include bold-16;
+    }
+
+    &__body,
+    &__body--primary,
+    &__body--action {
+        @include core-16;
+    }
+
+    &__body--primary {
+        font-weight: 700;
+    }
+
+    &__body--action {
+        text-align: right;
+    }
+
+    &__meta {
+        color: $secondary-text-colour;
+        font-weight: 300;
+        display: block;
+    }
+}
+
+.column-two-thirds .table-default__body--action {
+    width: 80px;
+    text-align: left;
+}

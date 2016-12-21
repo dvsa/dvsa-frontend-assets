@@ -1,0 +1,74 @@
+// -----------------------------------------------
+//
+//     Utilities SCSS - please add to as required.
+//
+// -----------------------------------------------
+
+// Responsive show/hide stuff
+// There is no "desktop" only above and below 768.
+// This is in the lint ignore file.
+
+// scss-lint:disable ImportantRule
+.hide-large {
+
+    @include media(false, false, 768px) {
+        display: none !important;
+    }
+}
+
+.hide-small {
+
+    @include media(false, 767px) {
+        display: none;
+    }
+}
+
+.js-only {
+    display: none;
+}
+
+.js-enabled {
+
+    .js-hidden {
+        display: none;
+    }
+
+    .js-only {
+        display: inline-block !important;
+    }
+}
+
+.clear-float {
+    @extend %contain-floats;
+}
+
+// toggle switch with arrow
+%toggle-switch {
+    position: relative;
+    display: block;
+    margin-left: 24px;
+
+    &:before {
+        position: absolute;
+        left: -24px;
+        top: 0;
+        content: '\25BA';
+    }
+}
+
+.toggle-switch {
+    @extend  %toggle-switch;
+}
+
+.toggle-switch--open {
+    @extend  %toggle-switch;
+
+    &:before {
+        content: '\25BC';
+    }
+}
+
+// text align right when required (for example, some form elements)
+.a-r {
+    text-align: right;
+}

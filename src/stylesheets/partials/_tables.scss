@@ -1,0 +1,150 @@
+// DVSA Tables
+// - Bump text size to 19px (inc. padding)
+// - Remove defaulting font-weight of th cells
+// - Add 'vertical-align: top;'
+// ==========================================================================
+// GOV.UK front end toolkit dependencies
+
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+
+table th,
+table td {
+    @include core-19;
+    padding: em(12, 19) em(20, 19) em(9, 19) 0;
+
+    text-align: left;
+    vertical-align: top;
+    color: $text-colour;
+
+    &:last-child {
+        padding-right: 0;
+    }
+}
+
+table thead th {
+    font-weight: 700;
+}
+
+table tbody td,
+table tbody th {
+    border-top: 1px solid $border-colour;
+    border-bottom: 1px solid $border-colour;
+}
+
+// Right align headings for numeric content
+table th.numeric {
+    text-align: right;
+}
+
+// Use tabular numbers for numeric table cells
+table td.numeric {
+    @include core-19($tabular-numbers: true);
+    text-align: right;
+}
+
+table td.tabular {
+    @include core-19($tabular-numbers: true);
+}
+
+// Column highlight (used in TQI national average)
+table th.secondary-data,
+table td.secondary-data {
+    background-color: #d5e8f3;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+// Sorting - add class to anchor
+table .sort-asc:after,
+table .sort-desc:after {
+    position: absolute;
+    display: inline-block;
+    text-decoration: none;
+}
+
+table .sort-asc:after {
+    content: ' \25B2';
+}
+
+table .sort-desc:after {
+    content: ' \25BC';
+}
+
+.table-row-cta {
+    // position:absolute;
+    display: inline-block;
+}
+
+.table-row-cta--right {
+    display: inline-block;
+    //float:right;
+    //top:0;
+    //right:0;
+}
+
+// ==========================================================================
+// Modifiers
+// ==========================================================================
+
+.key-value-list__header {
+    @include bold-36;
+    margin-top: em(25, 24);
+
+    @include media(tablet) {
+        margin-top: em(45, 36);
+    }
+}
+
+.key-value-list {
+    margin-top: $gutter;
+}
+
+.key-value-list__key,
+.key-value-list__value,
+.key-value-list__value--numeric,
+.key-value-list__value--muted {
+    width: 50%;
+}
+
+.key-value-list__value {
+    @include bold-19;
+    padding-left: $gutter-half;
+}
+
+.key-value-list__item-action {
+    padding-left: $gutter-half;
+}
+
+.key-value-list__value--numeric {
+    @include bold-19($tabular-numbers: true);
+    padding-left: $gutter-half;
+    letter-spacing: .03em;
+}
+
+.key-value-list__value--muted {
+    color: $secondary-text-colour;
+    padding-left: $gutter-half;
+}
+
+.key-value-list__meta {
+    @include core-16;
+    color: $secondary-text-colour;
+    display: block;
+}
+
+// .result-table {}
+.result-table__meta {
+    @include core-16;
+    color: $secondary-text-colour;
+    display: block;
+}
+
+// VM-10854
+.result-table + details {
+    margin-top: $gutter;
+}

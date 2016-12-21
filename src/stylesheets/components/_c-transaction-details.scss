@@ -1,0 +1,84 @@
+.c-transaction-details {
+    // scss-lint:disable DuplicateProperty
+    width: 100%;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: $white;
+    border-top-color: rgba($white, .5);
+    margin-top: 15px;
+}
+
+.c-transaction-details--inverted {
+    // scss-lint:disable DuplicateProperty
+    color: $black;
+    border-top-color: $black;
+    border-top-color: rgba($black, .5);
+}
+
+.c-transaction-details--two .c-transaction-details__item {
+    width: 50%;
+}
+
+.c-transaction-details--three .c-transaction-details__item {
+    width: 33.33%;
+}
+
+.c-transaction-details--four .c-transaction-details__item {
+    width: 25%;
+    text-align: left;
+}
+
+    .c-transaction-details__item {
+        display: table-cell;
+        text-align: center;
+        vertical-align: top;
+        padding-top: 15px;
+
+        @include media(mobile) {
+            display: table-row;
+            width: 100%;
+
+            // scss-lint:disable DuplicateProperty
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: $white;
+            border-bottom-color: rgba($white, .5);
+        }
+    }
+
+    .c-transaction-details__item:last-child { text-align: right; }
+    .c-transaction-details__item:first-child { text-align: left; }
+
+    .c-transaction-details__item,
+    .c-transaction-details__item--first,
+    .c-transaction-details__item--last {
+        @include media(mobile) {
+            text-align: left;
+        }
+    }
+
+    .c-transaction-details__key,
+    .c-transaction-details__value {
+        display: block;
+        border: 0;
+        padding: 0;
+        text-align: inherit;
+        color: inherit;
+
+        @include media(mobile) {
+            padding: 10px 0;
+            display: table-cell;
+        }
+    }
+
+    .c-transaction-details__key {
+        @include  core-16;
+    }
+
+    .c-transaction-details__value {
+        @include  bold-24;
+
+        @include media(mobile) {
+            @include  bold-16;
+        }
+    }

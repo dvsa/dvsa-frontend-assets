@@ -1,0 +1,23 @@
+.summary-heading {
+    @include bold-24();
+
+    position: relative;
+    margin-top: em(25, 20);
+    margin-bottom: em(10, 20);
+
+    @include media(tablet) {
+        margin-top: em(45, 24);
+        margin-bottom: em(20, 24);
+    }
+}
+
+.summary-heading__action {
+    @include core-16();
+    display: block;
+}
+
+.summary-heading__action--larger {
+    @include core-19();
+    display: block;
+}
+

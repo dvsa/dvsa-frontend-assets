@@ -1,0 +1,83 @@
+.filter {
+    background-color: $panel-colour;
+    margin-bottom: $gutter;
+    padding: 0 5px 5px;
+}
+
+.filter__heading {
+    @include bold-19;
+    display: block;
+    padding: 8px 5px 3px;
+
+    @include media(mobile) {
+        padding: 10px 5px 3px;
+    }
+}
+
+.filter__content,
+.filter__content--text {
+    @extend %contain-floats;
+    @include core-16;
+    padding: 10px;
+    background-color: $white;
+
+    .form-label {
+        @include bold-16;
+    }
+
+    > .form-group {
+        margin-bottom: 0;
+    }
+
+    > .form-group + .form-group {
+        margin-top: $gutter-half;
+    }
+}
+
+.filter__content--text {
+    background-color: $panel-colour;
+    padding: 0 5px;
+
+    .form-control {
+        width: 100%;
+    }   
+}
+
+.filter__list li {
+    padding: 5px 0;
+}
+
+.filter__help {
+    @include core-14;
+    display: block; 
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.responsive-toggle {
+
+    position: relative;
+
+    @include media(mobile) {
+
+        position: relative;
+
+        .filter__content {
+            border-top: 5px solid $grey-3;
+        }
+
+        &__switch {
+            display: block;
+            float: right;
+        }
+    }
+
+    @include media(tablet) {
+
+        position: relative;
+
+        &__switch {
+            display: none;
+        }
+    }
+}

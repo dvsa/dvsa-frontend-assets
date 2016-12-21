@@ -1,0 +1,43 @@
+.slot-hero {
+    background-color: $govuk-blue; 
+    margin-top: 30px;
+    color: $white;
+}
+
+.slot-hero__count,
+.slot-hero__usage {
+    @include grid-column(1 / 2);
+    padding: 10px 30px;
+
+    @include media(tablet) {
+        padding: 20px $gutter + 10;
+    }
+}
+
+.slot-hero li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.slot-hero li + li {
+    border-top: 1px solid #4d8fc0;
+}
+
+.slot-hero__title {
+    @include bold-48();
+
+    span {
+        @include bold-36();
+    }
+}
+
+.slot-hero .button--on-blue {
+    margin-top: 15px;
+}
+
+.slot-hero p {
+    @include core-16();
+    color: lighten($govuk-blue, 60%);
+    margin-bottom: em(5, 16);
+} 
+

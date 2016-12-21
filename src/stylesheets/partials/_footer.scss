@@ -1,0 +1,75 @@
+// Global footer
+
+#footer {
+    // Replaces the 1px #a1acb2 border from govuk_template
+    border-top: 10px solid $mot-blue;
+    
+    .footer-categories {
+        @extend %contain-floats;
+        
+        @include media(tablet) {
+            padding: 0 $gutter-half $gutter;
+        }
+
+        .footer-resources,
+        .footer-resources--one-third,
+        .footer-resources--two-thirds {
+            color: #333; // #A11y contrast fix
+
+            @include media(tablet) {
+                padding-bottom: 30px;
+            }
+        }
+
+        .footer-resources--two-thirds {
+            @include media(tablet) {
+                width: 66.666%; 
+                float: left;
+            }
+        }
+
+        .footer-resources--one-third {
+            @include media(tablet) {
+                width: 33.333%; 
+                float: left;
+            }
+        }
+
+        .footer-resources__header {
+            margin: 0 15px;
+            padding: 10px 0 0;
+            
+            @include media(tablet) {
+                padding-bottom: 20px;
+                border-bottom: 1px solid $border-colour;
+            }
+        }
+
+        hr {
+            clear: both;
+            margin: 0 15px 30px;
+            border: 1px solid $border-colour;
+            border-width: 1px 0 0;
+            
+            @include media(tablet) {
+                margin-bottom: 0;
+            }
+        }
+
+        ul {
+            @include core-16;
+            list-style: none;
+        }
+
+        li {
+            display: block;
+            margin-bottom: 5px;
+            padding: 10px 0 0;
+            margin: 0 15px 5px;
+            
+            @include media(tablet) {
+                margin: 0 15px;
+            }
+        }
+    }
+}

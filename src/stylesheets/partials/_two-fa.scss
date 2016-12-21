@@ -1,0 +1,54 @@
+.two-fa {
+    @include box-sizing(border-box);
+    background-color: #005ea5;
+    color: $white;
+    padding: $gutter-half;
+    
+    @include media(desktop) {
+        max-width: 66.6667%;
+    }
+}
+
+.two-fa__logo {
+    margin-right: $gutter;
+    vertical-align: middle;
+}
+
+.two-fa__pin {
+    letter-spacing: 5px;
+    margin-left: $gutter;
+}
+
+.two-fa__reset {
+    @include core-16;
+    width: 100%;
+    text-align: right;
+    padding-top: $gutter-half;
+    display: block;
+
+    @include media(tablet) {
+        max-width: 50%;
+    }
+}
+
+.two-fa__input {
+    @include box-sizing(border-box);
+
+    border: 1px solid $grey-2;
+    // border: 1px solid lime!important;
+    border-top: 0;
+    // margin-left: 0 !important;
+    // margin-right: 0 !important;
+    padding: 15px;
+
+    @include media(desktop) {
+        max-width: 66.6667%;
+    }
+}
+
+//  Modifier for error state
+.has-error.two-fa__input {
+    background-color: $error-background;
+    border-left-color: $mellow-red;
+    border-left-width: 3px;
+}
