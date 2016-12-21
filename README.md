@@ -1,2 +1,2 @@
-# DVSA fron-tend assets
+# DVSA front-end assets
 Generic assets for DVSA projects 
