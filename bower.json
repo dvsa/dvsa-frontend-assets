@@ -14,6 +14,10 @@
     "test",
     "tests",
     "src",
-    "scss-lint.yml"
+    "scss-lint.yml",
+    "README.md",
+    "bower.json",
+    "gruntfile.js",
+    "package.json"
   ]
 }
